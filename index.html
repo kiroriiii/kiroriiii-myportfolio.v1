@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="script.js"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="./assets/JVj.png" alt="logo" class="logo"/> 
+            <ul id="nav-links">
+                <li><a href="#profile">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+    <section id="profile">
+        <div class="text">
+            <h1>Hi! I'm <span>Jasmine Junio</span></h1>
+            <p class="stud">Student in University of the Cordilleras</p>
+    
+        </div>
+        <div class="piccont">
+            <img src="./assets/icon-fotor.png" alt="icon">
+        </div>
+    </div>
+    </section>
+
+<!----------------------about---------------------->
+<div id="About">
+<div id="skills">
+    <div class="row">
+        <div class="about-col-1">
+            <img src="./assets/user.jpg">
+        </div>
+        <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p class="description">Hello, I'm Jasmine V. Junio, a BSIT student majoring in Network Security
+                at the University of the Cordilleras in Baguio City. 
+                Originally from Pangasinan, I am passionate about using technology to 
+                innovate and solve problems. I have a keen interest in programming, 
+                web development, and network administration. 
+                I believe in the strength of teamwork and look forward to contributing
+                to organizations that value new technologies and collaborative ideas.
+            </p>
+
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Proficient with MS software</span><br>Word, PowerPoint Presentation, Excel</li>
+                    <li><span>Knowledgeable in programming language</span><br> HTML, JAVA, PYTHON, CSS</li>
+                    <li><span>Knowledgeable in multimedia software</span><br> Adobe Photoshop, Adobe Premiere, Video editing</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><Span>Basic Knowledge in Web development</Span></li>
+                    <li><span>Basic Knowledge in Network Security</span></li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>Senior High</span><br>Science, Technology, Engineering and
+                        Mathematics Strand</li>
+                    <li><span>Year 2nd Trimester</span><br/>Bachelor of Science in Information Technology</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!----------------------hobbies---------------------->
+<div id="hobbies">
+    <h1 class="subshit">Hobbies</h1>
+    <div class="row">
+        <div class="column">
+          <div class="content">
+            <img src="./assets/gaming.jpg" alt="gaming" style="width:100%">
+            <h3>Gaming</h3>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+          <img src="./assets/reading.jpg" alt="reading" style="width:100%">
+            <h3>Reading</h3>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+          <img src="./assets/makeup.jpg" alt="makeup" style="width:100%">
+            <h3>Makeup</h3>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content">
+          <img src="./assets/traveling.jpg" alt="travel" style="width:100%">
+            <h3>Traveling</h3>
+          </div>
+        </div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+	var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(var tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', smoothScroll)
+    })
+
+    function smoothScroll(e) {
+        e.preventDefault()
+        const href = this.getAttribute('href')
+        const offsetTop = document.querySelector(href).offsetTop
+
+        scroll({
+            top: offsetTop,
+            behavior: 'smooth'
+        })
+    }
+</script>
+    
+</body>
+</html>
